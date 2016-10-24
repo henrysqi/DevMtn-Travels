@@ -1,13 +1,35 @@
-angular.module('devmtnTravel').controller('bookedCtrl', function($scope, mainService, $state){
+angular.module('devmtnTravel').controller('bookedCtrl', function($scope, mainSrv, $state){
+	
+	
+	$scope.getCity = function(){
+		for (var i = 0; i < mainSrv.travelInfo.length; i++){
+			if (Number($state.params.id) === Number(mainSrv.travelInfo[i].id)){
+				$scope.currentCity = mainSrv.travelInfo[i];
+			}
+		}
+	}
+	
+	$scope.getCity();
+	
+	
 	
 
-for (var i = 0; i < mainService.travelInfo.length; i++){
-	if (mainService.travelInfo[i].id === $state.params.id){
-	  $scope.currentCity = mainService.travelInfo[i];
-	}
-}	
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 	
 })
